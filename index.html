@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Wilson</title>
+</head>
+
+<body>
+    <main>
+        <section class="header">
+            <div class="container grid">
+                <div class="column">
+                    <div class="introduction">
+                        <h1 class="title">Hi, I am<br><span class="name">Wilson Zhang</span></h1>
+                        <p class="text">
+                            I am a software developer specializing in building
+                            modern applications, websites and other programs.
+                        </p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="all projects">
+                        <div class="project">
+                            <img src="SIGNS_LIGHT.jpg" alt="project1">
+                        </div>
+                        <div class="project">
+                            <img src="SIGNS_LIGHT.jpg" alt="project2">
+                        </div>
+                        <div class="project">
+                            <img src="SIGNS_LIGHT.jpg" alt="project3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                <button onclick="Next()" class="button">
+                    <img src="next_arrow.svg" alt="next">
+                </button>
+            
+        </section>
+
+    </main>
+    <script>
+
+        function Next() {
+            window.scrollBy({ left: 200, behavior: "smooth" });
+        }
+    </script>
+</body>
+
+</html>
