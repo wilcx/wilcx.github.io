@@ -24,27 +24,34 @@
                 <div class="column">
                     <div class="all projects">
                         <div class="project">
-                            <img src="SIGNS_LIGHT.jpg" alt="project1">
+                            <a href="https://ambitious-bay-07cda210f.5.azurestaticapps.net/"><img
+                                    src="architecture_pic1.png" alt="project1"></a>
                         </div>
                         <div class="project">
-                            <img src="SIGNS_LIGHT.jpg" alt="project2">
+                            <a href="https://delightful-flower-02ae9c80f.5.azurestaticapps.net/"><img
+                                    src="mart65_pic.png" alt="project2"></a>
                         </div>
-                        <div class="project">
-                            <img src="SIGNS_LIGHT.jpg" alt="project3">
-                        </div>
+
                     </div>
                 </div>
             </div>
-            
+
+            <div class="direction-buttons">
+                <button onclick="Back()" class="button back">
+                    <img style="transform: rotate(-180deg);" src="next_arrow.svg" alt="back">
+                </button>
                 <button onclick="Next()" class="button">
                     <img src="next_arrow.svg" alt="next">
                 </button>
-            
+            </div>
+
         </section>
 
     </main>
     <script>
-
+        function Back() {
+            window.scrollBy({ left: -200, behavior: "smooth" });
+        }
         function Next() {
             window.scrollBy({ left: 200, behavior: "smooth" });
         }
