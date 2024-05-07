@@ -94,8 +94,8 @@ section.header {
 
                 .project {
                     border:1px solid hsl(0,0%,80%);
-                    height: 550px;
-                    width: 550px;
+                    height: 600px;
+                    width: 600px;
                     border-radius: 32px;
                     overflow: hidden;
                     cursor: pointer;
