@@ -37,10 +37,10 @@
             </div>
 
             <div class="direction-buttons">
-                <button onclick="Back()" class="button back">
+                <button id="back" class="button back">
                     <img style="transform: rotate(-180deg);" src="next_arrow.svg" alt="back">
                 </button>
-                <button onclick="Next()" class="button">
+                <button id="next" class="button">
                     <img src="next_arrow.svg" alt="next">
                 </button>
             </div>
@@ -49,12 +49,53 @@
 
     </main>
     <script>
-        function Back() {
-            window.scrollBy({ left: -200, behavior: "smooth" });
+        const backButton = document.getElementById("back");
+        const nextButton = document.getElementById("next");
+        backButton.addEventListener("click", scrollPrevious);
+        nextButton.addEventListener("click", scrollNext);
+        window.onload = function () {
+            if (window.innerWidth < 991.98) {
+                backButton.style.transform = "rotate(90deg)";
+                nextButton.style.transform = "rotate(90deg)";
+            }
+            else {
+                backButton.style.transform = "rotate(0deg)";
+                nextButton.style.transform = "rotate(0deg)";
+
+            }
         }
-        function Next() {
-            window.scrollBy({ left: 200, behavior: "smooth" });
+        window.onresize = function () {
+            if (window.innerWidth < 991.98) {
+                backButton.style.transform = "rotate(90deg)";
+                nextButton.style.transform = "rotate(90deg)";
+            }
+            else {
+                backButton.style.transform = "rotate(0deg)";
+                nextButton.style.transform = "rotate(0deg)";
+
+            }
         }
+        function scrollPrevious() {
+            if (window.innerWidth < 991.98) {
+                window.scrollBy({ top: -300, behavior: "smooth" });
+
+            }
+            else {
+                window.scrollBy({ left: -200, behavior: "smooth" });
+            }
+        }
+        function scrollNext() {
+            if (window.innerWidth < 991.98) {
+                window.scrollBy({ top: 300, behavior: "smooth" });
+
+
+            }
+            else {
+                window.scrollBy({ left: 200, behavior: "smooth" });
+            }
+        }
+
+
     </script>
 </body>
 

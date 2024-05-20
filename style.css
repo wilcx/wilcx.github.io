@@ -31,7 +31,7 @@
 }
 
 body {
-    background:hsl(0,3%,96%);
+    background: hsl(0, 3%, 96%);
     line-height: 1.5;
 }
 
@@ -51,8 +51,7 @@ section.header {
     justify-content: center;
 
     .container.grid {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
+        display: flex;
 
         .column:nth-child(1) {
             display: flex;
@@ -81,8 +80,8 @@ section.header {
                     font-weight: 400;
                     width: 290px;
                     font-size: 20px;
-                    line-height:1.8;
-                    color:hsl(0,0%,40%);
+                    line-height: 1.8;
+                    color: hsl(0, 0%, 40%);
                 }
             }
         }
@@ -96,7 +95,7 @@ section.header {
                 gap: 24px;
 
                 .project {
-                    border:1px solid hsl(0,0%,80%);
+                    border: 1px solid hsl(0, 0%, 80%);
                     height: 700px;
                     width: 700px;
                     border-radius: 32px;
@@ -107,7 +106,7 @@ section.header {
                         height: 100%;
                         width: 100%;
                         object-fit: cover;
-                        animation:scale 15s ease infinite;
+                        animation: scale 15s ease infinite;
                     }
                 }
             }
@@ -119,9 +118,10 @@ section.header {
         left: 0;
         right: 0;
         bottom: 40px;
-        display:flex;
+        display: flex;
         justify-content: center;
-        gap:12px;
+        gap: 12px;
+
         .button {
             width: 60px;
             height: 60px;
@@ -132,21 +132,25 @@ section.header {
             place-content: center;
             cursor: pointer;
         }
-        .button.back{
-            border:none;
-            background:none
+
+        .button.back {
+            border: none;
+            background: none
         }
     }
 
 }
-@keyframes scale{
-    0%{
+
+@keyframes scale {
+    0% {
         transform: scale(1);
     }
-    100%{
+
+    100% {
         transform: scale(1.05);
     }
 }
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -154,5 +158,75 @@ section.header {
 
     100% {
         opacity: 1;
+    }
+}
+
+@media(max-width:991.98px) {
+    section.header {
+        height:auto;
+        
+        .container.grid {
+            flex-direction: column;
+
+            .column:nth-child(1) {
+                height: 100vh;
+                display: grid;
+                place-content: center;
+
+                .introduction {
+                    padding: 12px 100px;
+                    width: 600px;
+                    animation: fadeIn 2s ease-in;
+
+                    .title {
+                        font-family: RadioCanadaBig, sans-serif;
+                        font-weight: 600;
+                        font-size: 18px;
+                        font-size: 18px;
+                    }
+
+                    .name {
+                        font-family: RadioCanadaBig, sans-serif;
+                        font-weight: 700;
+                        font-size: 32px;
+                    }
+
+                    .text {
+                        margin-top: 24px;
+                        font-family: RadioCanadaBig, sans-serif;
+                        font-weight: 400;
+                        width: 290px;
+                        font-size: 20px;
+                        line-height: 1.8;
+                        color: hsl(0, 0%, 40%);
+                    }
+                }
+            }
+
+            .column:nth-child(2) {
+                
+                .all.projects {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 64px;
+                    width:100%;
+
+                    .project {
+                        border: 1px solid hsl(0, 0%, 80%);
+                        width: 100%;
+                        border-radius: 32px;
+                        overflow: hidden;
+                        cursor: pointer;
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            animation: scale 15s ease infinite;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
