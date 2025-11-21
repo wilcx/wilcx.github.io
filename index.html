@@ -1,14 +1,231 @@
-<!doctype html>
-<html lang="en" data-critters-container>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>W Portfolio</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-<style>@font-face{font-family:Inter;src:url("./media/Inter-Regular-UHNXEOLW.ttf") format("truetype");font-weight:400;font-style:normal}@font-face{font-family:Inter;src:url("./media/Inter-Bold-MWGZA7CO.ttf") format("truetype");font-weight:700;font-style:normal}*{box-sizing:border-box;font-family:Inter,Arial,Helvetica,sans-serif}body{margin:0;padding:0;line-height:1.7;background-color:#333}
-</style><link rel="stylesheet" href="styles-C2RXMJWC.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-C2RXMJWC.css"></noscript><link rel="modulepreload" href="chunk-HXZI53HL.js"></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilson's Portfolio</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Mobile First CSS */
+        :root {
+            --primary-bg: #ffeb3b;
+            --text-color: #333;
+            --card-bg: rgba(255, 255, 255,0.9);
+            --gray-circle: #d3d3d3;
+            --border-radius: 12px;
+            --spacing: 20px;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            font-family: var(--font-family);
+            color: var(--text-color);
+            padding: var(--spacing);
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing);
+            margin-bottom: 40px;
+        }
+
+        .avatar {
+            min-width: 80px;
+            min-height: 80px;
+            width: 80px;
+            height: 80px;
+            background-color: var(--gray-circle);
+            border-radius: 50%;
+            overflow: hidden;
+
+        }
+
+        .intro-text h1 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .intro-text p {
+            font-size: 0.9rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing);
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-decoration: none;
+            color: inherit;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stagger the animation delays */
+        .project-card:nth-child(1) {
+            animation-delay: 0.6s;
+        }
+
+        .project-card:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+
+        .project-card:nth-child(3) {
+            animation-delay: 1.0s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-title {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+            font-weight:500;
+        }
+
+        /* Tablet breakpoint */
+        @media (min-width: 768px) {
+            .header {
+                gap: 30px;
+            }
+
+            .avatar {
+                min-width: 100px;
+                min-height: 100px;
+                width: 100px;
+                height: 100px;
+            }
+
+            .intro-text h1 {
+                font-size: 1.4rem;
+            }
+
+            .intro-text p {
+                font-size: 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-card {
+                min-height: 250px;
+            }
+        }
+
+        /* Desktop breakpoint */
+        @media (min-width: 1024px) {
+            .header {
+                gap: 40px;
+            }
+
+            .avatar {
+                min-width: 120px;
+                min-height: 120px;
+                width: 120px;
+                height: 120px;
+            }
+
+            .intro-text h1 {
+                font-size: 1.6rem;
+            }
+
+            .intro-text p {
+                font-size: 1.1rem;
+                padding-right: 200px;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .project-card {
+                min-height: 300px;
+            }
+
+            .project-title {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
 <body>
-  <app-root></app-root>
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-SVW742AL.js" type="module"></script></body>
+    <div class="container">
+        <div class="header">
+            <div class="avatar">
+                <img src="images/avatar.png" alt="avatar">
+            </div>
+            <div class="intro-text">
+                <h1>Hello, I'm Wilson</h1>
+                <p>I am a software and app developer with a passion for crafting practical solutions that streamline
+                    both personal and professional tasks.</p>
+            </div>
+        </div>
+
+        <div class="projects-grid">
+            <a href="https://ambitious-bay-07cda210f.5.azurestaticapps.net/" class="project-card" target="_blank" rel="noopener">
+                <div>
+                    <img src="images/architecture.png" alt="architecture">
+                </div>
+                <div class="project-title">The Architecture</div>
+            </a>
+            <a href="https://purple-bush-09e14030f.3.azurestaticapps.net/" class="project-card" target="_blank" rel="noopener">
+                <div>
+                    <img src="images/bethel.png" alt="bethel">
+                </div>
+                <div class="project-title">Bethel Design</div>
+            </a>
+            <a href="https://yellow-grass-02e60d40f.6.azurestaticapps.net/" class="project-card" target="_blank" rel="noopener">
+                <div>
+                    <img src="images/dimepiece.png" alt="dimepiece">
+                </div>
+                <div class="project-title">The Dimepiece</div>
+            </a>
+        </div>
+    </div>
+</body>
+
 </html>
